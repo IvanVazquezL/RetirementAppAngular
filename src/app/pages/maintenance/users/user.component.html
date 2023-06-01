@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                
+                <h4 class="card-title">User</h4>
+                <h6 class="card-subtitle">Update Info</h6>
+
+                <form class="form-horizontal p-t-20"
+                        [formGroup]="userForm"
+                        (submit)="saveUser()">
+
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <label for="exampleInputuname3">Email</label>
+
+                            <div class="input-group">
+
+                                <input type="text" 
+                                        formControlName="email"
+                                        class="form-control" 
+                                        id="exampleInputuname3" 
+                                        placeholder="Email"
+                                        >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="!selectedUser">
+                        <div class="col-sm-9">
+                            <label for="exampleInputuname3">Password</label>
+                            <div class="input-group">
+                                <input type="text" 
+                                        formControlName="password"
+                                        class="form-control" 
+                                        id="exampleInputuname3" 
+                                        placeholder="Password"
+                                        >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+
+                        <div class="col-sm-9">
+                            <label for="exampleInputuname3">Role</label>
+                            <div class="input-group">
+                                <input type="text" 
+                                        formControlName="role"
+                                        class="form-control" 
+                                        id="exampleInputuname3" 
+                                        placeholder="Role">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-b-0">
+                        <div class="offset-sm-3 col-sm-9">
+                            <button type="submit"
+                                    [disabled]="userForm.invalid"
+                                    class="btn btn-success waves-effect waves-light">
+                                <i class="fa fa-save"></i>
+                                Guardar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
